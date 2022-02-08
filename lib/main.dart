@@ -15,6 +15,10 @@ class MyApp extends StatelessWidget {
           ),
           centerTitle: true,
           backgroundColor: Colors.white,
+          leading: IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
+          iconTheme: const IconThemeData(color: Colors.black),
+          // ignore: deprecated_member_use
+          brightness: Brightness.light,
         ),
         body: null,
       ),
