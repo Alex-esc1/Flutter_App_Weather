@@ -46,10 +46,19 @@ Image _headerImage() {
 
 Column _weatherDescription() {
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
     // ignore: prefer_const_literals_to_create_immutables
     children: <Widget>[
       Text('Вторник',
           style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold)),
+      Divider(),
+      Text(
+        'Осадков не ожидается',
+        style: TextStyle(
+          color: Colors.blue,
+          fontSize: 15.0,
+        ),
+      )
     ],
   );
 }
