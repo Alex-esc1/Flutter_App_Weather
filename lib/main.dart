@@ -24,8 +24,22 @@ class MyApp extends StatelessWidget {
             actions: <Widget>[
               IconButton(icon: Icon(Icons.settings), onPressed: () {})
             ]),
-        body: null,
+        body: _buildBody(),
       ),
     );
   }
+}
+
+Widget _buildBody() {
+  return SingleChildScrollView(
+    child: Column(
+      children: <Widget>[_headerImage()],
+    ),
+  );
+}
+
+Image _headerImage() {
+  return Image(
+      image: NetworkImage(
+          'https://image.freepik.com/free-vector/weather-pattern_1061-487.jpg'));
 }
