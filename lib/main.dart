@@ -1,16 +1,18 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Погода"),
+          title: const Text(
+            "Погода",
+            style: TextStyle(color: Colors.black),
+          ),
           centerTitle: true,
         ),
         body: null,
