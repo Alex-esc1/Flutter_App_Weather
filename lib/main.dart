@@ -33,7 +33,17 @@ class MyApp extends StatelessWidget {
 Widget _buildBody() {
   return SingleChildScrollView(
     child: Column(
-      children: <Widget>[_headerImage(), _weatherDescription()],
+      children: <Widget>[
+        _headerImage(),
+        SafeArea(
+            child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[_weatherDescription(), _temperature()],
+          ),
+        )),
+      ],
     ),
   );
 }
@@ -59,6 +69,22 @@ Column _weatherDescription() {
           fontSize: 15.0,
         ),
       )
+    ],
+  );
+}
+
+Row _temperature() {
+  return Row(
+    children: <Widget>[
+      Column(
+        // ignore: prefer_const_literals_to_create_immutables
+        children: <Widget>[
+          Icon(
+            Icons.wb_sunny,
+            color: Colors.yellow,
+          ),
+        ],
+      ),
     ],
   );
 }
