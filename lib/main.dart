@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -9,17 +11,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "Погода",
-            style: TextStyle(color: Colors.black),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          leading: IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
-          iconTheme: const IconThemeData(color: Colors.black),
-          // ignore: deprecated_member_use
-          brightness: Brightness.light,
-        ),
+            title: const Text(
+              "Погода",
+              style: TextStyle(color: Colors.black),
+            ),
+            centerTitle: true,
+            backgroundColor: Colors.white,
+            leading: IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
+            iconTheme: const IconThemeData(color: Colors.black),
+            // ignore: deprecated_member_use
+            brightness: Brightness.light,
+            actions: <Widget>[
+              IconButton(icon: Icon(Icons.settings), onPressed: () {})
+            ]),
         body: null,
       ),
     );
