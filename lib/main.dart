@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
             iconTheme: const IconThemeData(color: Colors.black),
             // ignore: deprecated_member_use
             brightness: Brightness.light,
-            actions: <Widget>[
+            actions: [
               IconButton(icon: Icon(Icons.settings), onPressed: () {})
             ]),
         body: _buildBody(),
@@ -40,7 +40,7 @@ Widget _buildBody() {
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[_weatherDescription(), _temperature()],
+            children: [_weatherDescription(), Divider(), _temperature()],
           ),
         )),
       ],
@@ -75,13 +75,38 @@ Column _weatherDescription() {
 
 Row _temperature() {
   return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
       Column(
-        // ignore: prefer_const_literals_to_create_immutables
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Icon(
             Icons.wb_sunny,
             color: Colors.yellow,
+          ),
+        ],
+      ),
+      SizedBox(
+        width: 16.0,
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Text(
+                "15 градусов",
+                style: TextStyle(color: Colors.green),
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Text(
+                "Деревня Минск",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ],
           ),
         ],
       ),
