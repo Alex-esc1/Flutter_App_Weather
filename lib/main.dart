@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
 Widget _buildBody() {
   return SingleChildScrollView(
     child: Column(
-      children: <Widget>[_headerImage()],
+      children: <Widget>[_headerImage(), _weatherDescription()],
     ),
   );
 }
@@ -42,4 +42,14 @@ Image _headerImage() {
   return Image(
       image: NetworkImage(
           'https://image.freepik.com/free-vector/weather-pattern_1061-487.jpg'));
+}
+
+Column _weatherDescription() {
+  return Column(
+    // ignore: prefer_const_literals_to_create_immutables
+    children: <Widget>[
+      Text('Вторник',
+          style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold)),
+    ],
+  );
 }
