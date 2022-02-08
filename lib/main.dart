@@ -47,6 +47,7 @@ Widget _buildBody() {
               Divider(),
               _temperatureForecast(),
               Divider(),
+              _footerRating(),
             ],
           ),
         )),
@@ -143,4 +144,46 @@ Wrap _temperatureForecast() {
           backgroundColor: Colors.blue,
         );
       }));
+}
+
+Row _footerRating() {
+  var star = Row(
+    children: [
+      Icon(
+        Icons.star,
+        size: 15.0,
+        color: Colors.yellow,
+      ),
+      Icon(
+        Icons.star,
+        size: 15.0,
+        color: Colors.grey,
+      ),
+      Icon(
+        Icons.star,
+        size: 15.0,
+        color: Colors.grey,
+      ),
+      Icon(
+        Icons.star,
+        size: 15.0,
+        color: Colors.grey,
+      ),
+      Icon(
+        Icons.star,
+        size: 15.0,
+        color: Colors.grey,
+      ),
+    ],
+  );
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Text(
+        'Точность прогноза',
+        style: TextStyle(fontSize: 15.0),
+      ),
+      star,
+    ],
+  );
 }
