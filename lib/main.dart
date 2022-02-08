@@ -40,7 +40,14 @@ Widget _buildBody() {
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [_weatherDescription(), Divider(), _temperature()],
+            children: [
+              _weatherDescription(),
+              Divider(),
+              _temperature(),
+              Divider(),
+              _temperatureForecast(),
+              Divider(),
+            ],
           ),
         )),
       ],
@@ -112,4 +119,28 @@ Row _temperature() {
       ),
     ],
   );
+}
+
+Wrap _temperatureForecast() {
+  return Wrap(
+      spacing: 10.0,
+      children: List.generate(8, (int index) {
+        return Chip(
+          label: Text(
+            '${index + 20}C',
+            style: TextStyle(
+                fontSize: 15.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold),
+          ),
+          avatar: Icon(
+            Icons.wb_cloudy,
+            color: Colors.white,
+          ),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          side: BorderSide(color: Colors.green),
+          backgroundColor: Colors.blue,
+        );
+      }));
 }
