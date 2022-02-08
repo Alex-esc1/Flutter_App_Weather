@@ -148,6 +148,7 @@ Wrap _temperatureForecast() {
 
 Row _footerRating() {
   var star = Row(
+    mainAxisSize: MainAxisSize.min,
     children: [
       Icon(
         Icons.star,
