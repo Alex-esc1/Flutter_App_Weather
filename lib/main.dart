@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
             style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
+          backgroundColor: Colors.white,
         ),
         body: null,
       ),
